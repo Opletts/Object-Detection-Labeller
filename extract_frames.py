@@ -1,6 +1,6 @@
 import cv2
 
-from params import save_path, vid_path
+from params import img_path, vid_path
 
 cap = cv2.VideoCapture(vid_path)
 
@@ -14,7 +14,7 @@ while True:
     f_id += 1
 
     if f_id % every_n_frames == 0:
-        cv2.imwrite(save_path + str(k) + '.png', img)
+        cv2.imwrite(img_path + str(k) + '.png', img)
 
         cv2.imshow("img", cv2.resize(img, (img_w // 2, img_h // 2)))
         cv2.waitKey(1)
