@@ -97,6 +97,7 @@ for name in img_list:
     print("Add your own Boxes")
     disp = cpy.copy()
     cv2.putText(disp, "Manual", (img_w // 2, 50), 0, 1, (0, 0, 255), 1)
+    cpy = disp.copy()
 
     while 1:
         cv2.imshow("Image", disp)
