@@ -21,6 +21,8 @@ pip3 install -r requirements.txt
 *   Pillow
 
 ## Usage
+[Link](https://entuedu-my.sharepoint.com/:u:/g/personal/n1904786f_e_ntu_edu_sg/ESTo9OCxJIlCrWibMQmCrtgBMFDZS0MboObCg_fGPwSzgg?e=nrSZkc) to a faster_rcnn_resnet50_fpn trained on the Bosch Dataset.
+
 Modify the `img_path`, `save_lbl` and `model_path` in `params.py`.
 
 
