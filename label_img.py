@@ -64,13 +64,13 @@ for name in img_list:
         scores = pred[0]['scores'].cpu().detach().numpy()
 
         for bbox, score in zip(bboxes, scores):
-            save = 0
+            save = False
             cv2.putText(disp, "Model Prediction", (img_w // 3, 50), 0, 1, (0, 0, 255), 1)
 
             if score > confidence:
                 x1, y1, x2, y2 = bbox
 
-                while 1:
+                while True:
                     cv2.rectangle(disp, (x1, y1), (x2, y2), 255, 1)
                     cv2.imshow("Image", disp)
                     key = cv2.waitKey(1)
@@ -78,11 +78,11 @@ for name in img_list:
                     if key >= ord('0') and key <= ord('9'):
                         num_boxes += 1
                         val = key - 48
-                        save = 1
+                        save = True
                         break
 
                     if key == ord('d'):
-                        save = 0
+                        save = False
                         break
 
                     if key == ord('q'):
@@ -99,7 +99,7 @@ for name in img_list:
     cv2.putText(disp, "Manual", (img_w // 2, 50), 0, 1, (0, 0, 255), 1)
     cpy = disp.copy()
 
-    while 1:
+    while True:
         cv2.imshow("Image", disp)
         key = cv2.waitKey(1)
 
