@@ -41,10 +41,20 @@ mouseX2, mouseY2 = 0, 0
 img_list = os.listdir(img_path)
 img_list.sort(key=lambda f: int(re.sub('\D', '', f)))
 
+res_flag = False if resume is "" else True
+
 cv2.namedWindow('Image')
 cv2.setMouseCallback('Image', get_coords)
 
 for name in img_list:
+    if resume is not "" and resume in name:
+        res_flag = False
+
+    if res_flag:
+        print("Skipping " + name)
+        continue
+
+    print("Labelling " + name)
     save_str = ""
     num_boxes = 0
     img = cv2.imread(os.path.join(img_path, name))

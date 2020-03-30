@@ -25,12 +25,11 @@ pip3 install -r requirements.txt
 
 Modify the `img_path`, `save_lbl` and `model_path` in `params.py`.
 
-
 `enable_model` flag lets you decide if you want a model to make bounding box predictions which you can choose to keep or discard.
-
 
 Only predictions above the set `confidence` will be shown.
 
+Change `resume` to the name of the image where you left off.
 
 Run using :
 ```
